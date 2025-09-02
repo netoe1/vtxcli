@@ -1,7 +1,9 @@
 #ifndef ICLIENTE_HPP
 #define ICLIENTE_HPP
 #include <string>
-using std::string;
+#include <vector>
+#include "IOrcamento.hpp"
+using std::string, std::vector;
 
 class Cliente
 {
@@ -10,6 +12,7 @@ public:
     string nome;
     string email;
     string telefone;
+    vector<Orcamento> orcamentos;
 
     Cliente(string id, string nome, string email, string telefone);
     void listarCliente();
