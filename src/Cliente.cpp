@@ -1,33 +1,22 @@
+#include "../include/ICliente.hpp"
 #include <string>
 #include <iostream>
+
 using std::string;
-class Cliente
+Cliente::Cliente(string id, string nome, string email, string telefone)
 {
-public:
-    string id;
-    string nome;
-    string email;
-    string telefone;
 
-    Cliente(string id, string nome, string email, string telefone)
+    if (id.empty() || nome.empty() || email.empty() || telefone.empty())
     {
-        if (id.empty() || nome.empty() || email.empty() || telefone.empty())
-        {
-            std::cout << "cliente-constructor: nenhum dos valores que você digitou no construtor podem ser inválidos.\n";
-            return;
-        }
+        std::cout << "cliente-constructor: nenhum dos valores que você digitou no construtor podem ser inválidos.\n";
+        return;
+    }
 
-        this->id = id;
-        this->nome = nome;
-        this->email = email;
-        this->telefone = telefone;
-    };
-
-    void listarCliente();
-    Cliente editarCliente(Cliente novosDados);
-    Cliente reset();
-};
-
+    this->id = id;
+    this->nome = nome;
+    this->email = email;
+    this->telefone = telefone;
+}
 void Cliente::listarCliente()
 {
     std::cout << "Id:" << this->id << "\n";
@@ -51,4 +40,5 @@ Cliente Cliente::reset()
     this->nome = "undefined";
     this->email = "undefined";
     this->telefone = "undefined";
+    return *this;
 }

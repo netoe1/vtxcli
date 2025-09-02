@@ -1,0 +1,7 @@
+# Arquivos Objeto
+*.o
+*.obj
+*.bin
+
+# vscode
+./.vscode
