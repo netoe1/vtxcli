@@ -1,9 +1,21 @@
-CC= g++
+
+# Compiler configs:
+CC=g++
+
+# Paths binaries:
+HEADERS=./include
+BIN=./bin
+SOURCES= ./src
 
 
-cliente.o:
-	g++ -o ./bin/cliente.o -c ./src/Cliente.cpp -I ./include
-itensOrcamento.o:
-	g++ -o ./bin/itensOrcamento.o -c ./src/ItensOrcamento.cpp -I ./include
-orcamento.o:
-	g++ -o ./bin/itensOrcamento.o -c ./src/ItensOrcamento.cpp -I ./include /bin/itensOrcamento.o
+
+
+cliente.o: $(HEADERS)/ICliente.hpp $(SOURCES)/Cliente.cpp
+	$(CC) -o $(BIN)/cliente.o -c $(SOURCES)/Cliente.cpp -I $(HEADERS)
+itensOrcamento.o: $(HEADERS)/IItensOrcamento.hpp $(SOURCES)/ItensOrcamento.cpp
+	$(CC) -o $(BIN)/itensOrcamento.o -c $(SOURCES)/ItensOrcamento.cpp -I $(HEADERS)
+orcamento.o: $(HEADERS)/Orcamento.hpp $(SOURCES)/Orcamento.cpp
+	$(CC) -o $(BIN)/itensOrcamento.o -c $(SOURCES)/ItensOrcamento.cpp -I $(HEADERS) $(BIN)/itensOrcamento.o
+
+clean:
+	rm -f ./bin/*.o ./bin/*.obj ./bin/*.bin

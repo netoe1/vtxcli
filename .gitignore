@@ -4,4 +4,4 @@
 *.bin
 
 # vscode
-./.vscode
+.vscode/
