@@ -8,8 +8,6 @@ BIN=./bin
 SOURCES= ./src
 
 
-
-
 cliente.o: $(HEADERS)/ICliente.hpp $(SOURCES)/Cliente.cpp
 	$(CC) -o $(BIN)/cliente.o -c $(SOURCES)/Cliente.cpp -I $(HEADERS)
 itensOrcamento.o: $(HEADERS)/IItensOrcamento.hpp $(SOURCES)/ItensOrcamento.cpp
