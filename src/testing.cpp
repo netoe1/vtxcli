@@ -7,7 +7,7 @@ using std::cout;
 int main(void)
 {
 
-    Cliente novoCliente();
+    Cliente novoCliente("1", "Ely Neto", "ely@ely.com", "123");
 
     return 0;
 }

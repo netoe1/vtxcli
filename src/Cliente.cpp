@@ -17,7 +17,7 @@ Cliente::Cliente(string id, string nome, string email, string telefone)
     this->email = email;
     this->telefone = telefone;
 }
-void Cliente::listarCliente()
+void Cliente::listar()
 {
     std::cout << "Id:" << this->id << "\n";
     std::cout << "Nome:" << this->nome << "\n";
@@ -25,7 +25,7 @@ void Cliente::listarCliente()
     std::cout << "Telefone:" << this->telefone << "\n";
 }
 
-Cliente Cliente::editarCliente(Cliente novosDados)
+Cliente Cliente::editar(Cliente novosDados)
 {
     this->id = novosDados.id;
     this->nome = novosDados.nome;

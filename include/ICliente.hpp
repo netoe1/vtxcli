@@ -15,8 +15,8 @@ public:
     vector<Orcamento> orcamentos;
 
     Cliente(string id, string nome, string email, string telefone);
-    void listarCliente();
-    Cliente editarCliente(Cliente novosDados);
+    void listar();
+    Cliente editar(Cliente novosDados);
     Cliente reset();
 };
 

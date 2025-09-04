@@ -51,6 +51,7 @@ Orcamento Orcamento::editarOrcamento(Orcamento novoOrcamento)
     this->itens = novoOrcamento.itens;
     this->nome = novoOrcamento.nome;
     this->valorTotal = novoOrcamento.valorTotal;
+    return *this;
 }
 
 void Orcamento::calcularValorTotal()
